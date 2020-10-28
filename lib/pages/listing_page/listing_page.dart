@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_donut_ui/pages/listing_page/grid_builder.dart';
 import 'package:flutter_donut_ui/pages/listing_page/navigation.dart';
 import 'package:flutter_donut_ui/utils/custom_paint.dart';
 
@@ -52,6 +53,13 @@ class DonutListingPage extends StatelessWidget {
                 ),
               ),
               HeaderNavigation(),
+              SizedBox(
+                height: 40.0,
+              ),
+              DonutGridBuilder(),
+              SizedBox(
+                height: 30.0,
+              ),
             ],
           ),
         ),
