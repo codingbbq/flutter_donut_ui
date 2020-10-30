@@ -6,6 +6,7 @@ class HeaderNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100,
+      color: Colors.red,
       child: ListView.separated(
         shrinkWrap: true,
         itemCount: navigationList.length,
