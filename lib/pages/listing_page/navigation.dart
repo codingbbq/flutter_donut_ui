@@ -5,30 +5,48 @@ class HeaderNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      color: Colors.red,
+      height: 110,
       child: ListView.separated(
         shrinkWrap: true,
         itemCount: navigationList.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, item) {
-          return Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.orange,
+          return GestureDetector(
+            onTap: () {
+              print("Clicked");
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Color(0xFF404040),
+                    width: 2.0,
+                  ),
                 ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  navigationList[item].name,
-                ),
-              ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    navigationList[item].unselectedImg,
+                    fit: BoxFit.cover,
+                    width: 50,
+                    height: 50,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    navigationList[item].name,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },

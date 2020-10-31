@@ -7,7 +7,7 @@ class DonutGridBuilder extends StatelessWidget {
     return Expanded(
       child: Container(
         margin: EdgeInsets.only(
-          top: 40.0,
+          top: 20.0,
         ),
         child: GridView.builder(
           padding: EdgeInsets.only(
@@ -55,11 +55,14 @@ class DonutGridBuilder extends StatelessWidget {
                 ),
 
                 // Donut picture
-                Container(
+                Align(
                   alignment: Alignment.center,
-                  width: 100,
-                  height: 100,
-                  color: Colors.grey,
+                  child: Image.asset(
+                    donutList[index].img,
+                    fit: BoxFit.contain,
+                    width: 100,
+                    height: 100,
+                  ),
                 ),
 
                 SizedBox(

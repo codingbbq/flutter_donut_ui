@@ -12,8 +12,8 @@ class NavigationModel {
 
 final NavigationModel donuts = NavigationModel(
     name: "Donuts",
-    selectedImg: "assets/images/navigation/donuts_selected.png",
-    unselectedImg: "assets/images/navigation/donuts_unselected.png");
+    selectedImg: "assets/images/navigation/donut_selected.png",
+    unselectedImg: "assets/images/navigation/donut_unselected.png");
 
 final NavigationModel burger = NavigationModel(
     name: "Burger",
@@ -22,8 +22,8 @@ final NavigationModel burger = NavigationModel(
 
 final NavigationModel pancake = NavigationModel(
     name: "PanCakes",
-    selectedImg: "assets/images/navigation/pancake_selected.png",
-    unselectedImg: "assets/images/navigation/pancake_unselected.png");
+    selectedImg: "assets/images/navigation/pancakes_selected.png",
+    unselectedImg: "assets/images/navigation/pancakes_unselected.png");
 
 final NavigationModel smothie = NavigationModel(
     name: "Smothie",

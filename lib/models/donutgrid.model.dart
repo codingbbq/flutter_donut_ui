@@ -49,7 +49,7 @@ final DonutGridModel redVelvet = DonutGridModel(
   ingSalt: 0.3,
   ingFat: 12,
   ingEnergy: 40,
-  img: "assets/images/donuts/1.png",
+  img: "assets/images/donuts/2.png",
 );
 
 final DonutGridModel vanillaSprinkle = DonutGridModel(
@@ -63,7 +63,7 @@ final DonutGridModel vanillaSprinkle = DonutGridModel(
   ingSalt: 0.3,
   ingFat: 12,
   ingEnergy: 40,
-  img: "assets/images/donuts/1.png",
+  img: "assets/images/donuts/3.png",
 );
 
 final DonutGridModel coconutCake = DonutGridModel(
@@ -77,7 +77,7 @@ final DonutGridModel coconutCake = DonutGridModel(
   ingSalt: 0.3,
   ingFat: 12,
   ingEnergy: 40,
-  img: "assets/images/donuts/1.png",
+  img: "assets/images/donuts/4.png",
 );
 
 final List<DonutGridModel> donutList = [

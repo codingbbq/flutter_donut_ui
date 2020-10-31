@@ -52,6 +52,9 @@ class DonutListingPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(
+                height: 30.0,
+              ),
               HeaderNavigation(),
               DonutGridBuilder(),
             ],

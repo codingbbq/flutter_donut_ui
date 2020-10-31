@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_donut_ui/pages/details_page/item_details_page.dart';
 import 'package:flutter_donut_ui/pages/listing_page/listing_page.dart';
 
 void main() {
@@ -16,7 +17,11 @@ class DonutUI extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         canvasColor: Colors.transparent,
       ),
-      home: DonutListingPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (BuildContext context) => DonutListingPage(),
+        '/item': (BuildContext context) => ItemDetailsPage()
+      },
     );
   }
 }
