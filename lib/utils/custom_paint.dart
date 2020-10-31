@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_donut_ui/constants/constants.dart' as CONSTANT;
 
 class DonutUICustomBG extends CustomPainter {
   @override
@@ -9,7 +10,7 @@ class DonutUICustomBG extends CustomPainter {
 
     Path mainBackground = Path();
     mainBackground.addRect(Rect.fromLTRB(0, 0, width, height));
-    paint.color = Color(0xFFEFF5F6);
+    paint.color = CONSTANT.BGCOLOR;
     canvas.drawPath(mainBackground, paint);
 
     final Paint hdrPaint = Paint()..color = Colors.white;

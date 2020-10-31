@@ -49,45 +49,51 @@ class DonutGridBuilder extends StatelessWidget {
                     ),
                   ),
                 ),
-
                 SizedBox(
                   height: 10.0,
                 ),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/item');
+                  },
+                  child: Column(
+                    children: <Widget>[
+                      // Donut picture
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          donutList[index].img,
+                          fit: BoxFit.contain,
+                          width: 100,
+                          height: 100,
+                        ),
+                      ),
 
-                // Donut picture
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    donutList[index].img,
-                    fit: BoxFit.contain,
-                    width: 100,
-                    height: 100,
+                      SizedBox(
+                        height: 10.0,
+                      ),
+
+                      // Donut name
+                      Text(
+                        donutList[index].name,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+
+                      // Donut category
+                      Text(
+                        donutList[index].category,
+                        style: TextStyle(
+                          fontSize: 16.0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-
-                SizedBox(
-                  height: 10.0,
-                ),
-
-                // Donut name
-                Text(
-                  donutList[index].name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-
-                // Donut category
-                Text(
-                  donutList[index].category,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.grey,
-                  ),
-                ),
-
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[

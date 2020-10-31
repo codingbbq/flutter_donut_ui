@@ -22,10 +22,13 @@ class DonutListingPage extends StatelessWidget {
           color: Color(0xFF2F2F2F),
         ),
         actions: [
-          Padding(
+          Container(
+            width: 60.0,
             padding: EdgeInsets.all(5.0),
             child: CircleAvatar(
-              backgroundColor: Colors.orange,
+              backgroundImage: AssetImage(
+                "assets/images/profile.jpg",
+              ),
               radius: 30.0,
             ),
           )
