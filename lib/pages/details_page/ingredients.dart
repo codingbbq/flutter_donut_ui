@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_donut_ui/models/donutgrid.model.dart';
 
 class IngredientsDetails extends StatelessWidget {
+  final IngredientStats stats;
+
+  const IngredientsDetails({Key key, this.stats}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +20,7 @@ class IngredientsDetails extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            "Sugar",
+            stats.name,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
@@ -29,15 +34,15 @@ class IngredientsDetails extends StatelessWidget {
             height: 10.0,
           ),
           Container(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(15.0),
             decoration: BoxDecoration(
               color: Colors.pink,
               shape: BoxShape.circle,
             ),
             child: Text(
-              "2%",
+              stats.value.toString() + "%",
               style: TextStyle(
-                fontSize: 18.0,
+                fontSize: 16.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),

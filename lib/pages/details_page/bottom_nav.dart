@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
+  final num price;
+
+  const BottomNavigation({Key key, this.price}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +23,7 @@ class BottomNavigation extends StatelessWidget {
           Column(
             children: [
               Text(
-                r"$45",
+                r"$" + price.toString(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 40.0,

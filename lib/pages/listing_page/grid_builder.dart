@@ -54,7 +54,8 @@ class DonutGridBuilder extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/item');
+                    Navigator.pushNamed(context, '/item',
+                        arguments: donutList[index]);
                   },
                   child: Column(
                     children: <Widget>[
