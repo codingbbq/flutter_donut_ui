@@ -96,8 +96,9 @@ class ItemDetailsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        for (var ingredients in arguments.ingredients)
-                          IngredientsDetails(stats: ingredients),
+                        for (var i = 0; i < arguments.ingredients.length; i++)
+                          IngredientsDetails(
+                              index: i, stats: arguments.ingredients[i]),
                       ],
                     ),
                     SizedBox(

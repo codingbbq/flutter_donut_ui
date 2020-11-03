@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donut_ui/models/donutgrid.model.dart';
+import 'package:flutter_donut_ui/constants/constants.dart' as CONSTANT;
 
 class IngredientsDetails extends StatelessWidget {
   final IngredientStats stats;
-
-  const IngredientsDetails({Key key, this.stats}) : super(key: key);
+  final int index;
+  const IngredientsDetails({Key key, this.stats, this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +37,14 @@ class IngredientsDetails extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(15.0),
             decoration: BoxDecoration(
-              color: Colors.pink,
+              color: CONSTANT.colorList[index],
               shape: BoxShape.circle,
             ),
             child: Text(
               stats.value.toString() + "%",
               style: TextStyle(
                 fontSize: 16.0,
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),

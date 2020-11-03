@@ -38,14 +38,18 @@ class DonutGridBuilder extends StatelessWidget {
                       horizontal: 20.0,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.pink,
+                      color: donutList[index].color,
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20.0),
                         bottomLeft: Radius.circular(20.0),
                       ),
                     ),
                     child: Text(
-                      donutList[index].price.toString(),
+                      r"$" + donutList[index].price.toString(),
+                      style: TextStyle(
+                        color: darken(donutList[index].color, .4),
+                        fontSize: 18.0,
+                      ),
                     ),
                   ),
                 ),
@@ -126,4 +130,15 @@ class DonutGridBuilder extends StatelessWidget {
       ),
     );
   }
+}
+
+//https://stackoverflow.com/questions/58360989/programmatically-lighten-or-darken-a-hex-color-in-dart
+
+Color darken(Color color, [double amount = .1]) {
+  assert(amount >= 0 && amount <= 1);
+
+  final hsl = HSLColor.fromColor(color);
+  final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+
+  return hslDark.toColor();
 }

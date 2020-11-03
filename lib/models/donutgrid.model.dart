@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class DonutGridModel {
   final int id;
   final String name;
@@ -7,6 +9,7 @@ class DonutGridModel {
   final String details;
   final List<IngredientStats> ingredients;
   final String img;
+  final Color color;
 
   DonutGridModel({
     this.id,
@@ -17,6 +20,7 @@ class DonutGridModel {
     this.details,
     this.ingredients,
     this.img,
+    this.color,
   });
 }
 
@@ -47,6 +51,7 @@ final DonutGridModel nutsCaramel = DonutGridModel(
       "The Sweet and subtle salty combo of chocolate meets caramel. Introduce the caramel duo to your mouth!",
   ingredients: nutsCaramerIngredients,
   img: "assets/images/donuts/1.png",
+  color: Color(0xFFf28db4),
 );
 
 final List<IngredientStats> redVelvetIngredients = [
@@ -66,6 +71,7 @@ final DonutGridModel redVelvet = DonutGridModel(
       "The Sweet and subtle salty combo of chocolate meets caramel. Introduce the caramel duo to your mouth!",
   ingredients: redVelvetIngredients,
   img: "assets/images/donuts/2.png",
+  color: Color(0xFF7c3a22),
 );
 
 final List<IngredientStats> vanillaSprinkleIngredients = [
@@ -85,6 +91,7 @@ final DonutGridModel vanillaSprinkle = DonutGridModel(
       "The Sweet and subtle salty combo of chocolate meets caramel. Introduce the caramel duo to your mouth!",
   ingredients: vanillaSprinkleIngredients,
   img: "assets/images/donuts/3.png",
+  color: Color(0xFF6f5c59),
 );
 
 final List<IngredientStats> coconutCakeIngredients = [
@@ -104,6 +111,7 @@ final DonutGridModel coconutCake = DonutGridModel(
       "The Sweet and subtle salty combo of chocolate meets caramel. Introduce the caramel duo to your mouth!",
   ingredients: coconutCakeIngredients,
   img: "assets/images/donuts/4.png",
+  color: Color(0xFFbea682),
 );
 
 final List<DonutGridModel> donutList = [
