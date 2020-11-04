@@ -22,6 +22,20 @@ class DonutGridModel {
     this.img,
     this.color,
   });
+
+  factory DonutGridModel.fromJson(Map<String, dynamic> json) {
+    return DonutGridModel(
+      id: json['id'],
+      name: json['name'],
+      category: json['category'],
+      price: json['price'],
+      rating: json['rating'],
+      details: json['details'],
+      ingredients: json['ingredients'],
+      img: json['img'],
+      color: json['color'],
+    );
+  }
 }
 
 class IngredientStats {
@@ -32,6 +46,10 @@ class IngredientStats {
     this.name,
     this.value,
   });
+
+  factory IngredientStats.fromJson(Map<String, dynamic> json) {
+    return IngredientStats(name: json['name'], value: json['value']);
+  }
 }
 
 final List<IngredientStats> nutsCaramerIngredients = [
