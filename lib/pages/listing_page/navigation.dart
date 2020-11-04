@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donut_ui/models/navigation.model.dart';
 
-class HeaderNavigation extends StatelessWidget {
+class HeaderNavigation extends StatefulWidget {
+  @override
+  _HeaderNavigationState createState() => _HeaderNavigationState();
+}
+
+class _HeaderNavigationState extends State<HeaderNavigation> {
+  List<int> _selectedNavItem = [0];
+
+  void _selected(item) {
+    if (!_selectedNavItem.contains(item)) {
+      print(_selectedNavItem);
+      setState(() {
+        _selectedNavItem = [item];
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,23 +29,27 @@ class HeaderNavigation extends StatelessWidget {
         itemBuilder: (BuildContext context, item) {
           return GestureDetector(
             onTap: () {
-              print("Clicked");
+              _selected(item);
             },
             child: Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(0xFF404040),
-                    width: 2.0,
-                  ),
-                ),
-              ),
+              decoration: _selectedNavItem.contains(item)
+                  ? BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Color(0xFF404040),
+                          width: 2.0,
+                        ),
+                      ),
+                    )
+                  : BoxDecoration(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    navigationList[item].unselectedImg,
+                    _selectedNavItem.contains(item)
+                        ? navigationList[item].selectedImg
+                        : navigationList[item].unselectedImg,
                     fit: BoxFit.cover,
                     width: 50,
                     height: 50,
@@ -42,7 +62,9 @@ class HeaderNavigation extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.normal,
-                      color: Colors.grey,
+                      color: _selectedNavItem.contains(item)
+                          ? Colors.black
+                          : Colors.grey,
                     ),
                   ),
                 ],
