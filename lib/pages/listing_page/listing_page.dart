@@ -59,7 +59,7 @@ class DonutListingPage extends StatelessWidget {
                 height: 30.0,
               ),
               HeaderNavigation(),
-              DonutGridBuilder(),
+              ProductGridBuilder(),
             ],
           ),
         ),
