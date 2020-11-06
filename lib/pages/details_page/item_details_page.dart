@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donut_ui/constants/constants.dart' as CONSTANT;
-import 'package:flutter_donut_ui/models/donutgrid.model.dart';
+import 'package:flutter_donut_ui/models/product.model.dart';
 import 'package:flutter_donut_ui/pages/details_page/bottom_nav.dart';
 import 'package:flutter_donut_ui/pages/details_page/ingredients.dart';
 
 class ItemDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final DonutGridModel arguments = ModalRoute.of(context).settings.arguments;
-
+    final ProductList arguments = ModalRoute.of(context).settings.arguments;
+    print(arguments.id);
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: true,

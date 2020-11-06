@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_donut_ui/models/donutgrid.model.dart';
-
 import 'package:flutter_donut_ui/models/product.model.dart';
 import 'package:flutter_donut_ui/services/list.service.dart';
 
@@ -12,7 +10,6 @@ class ProductGridBuilder extends StatefulWidget {
 class _ProductGridBuilderState extends State<ProductGridBuilder> {
   Future<List<ProductList>> fetchProducts() async {
     final response = await ListAPI().fetchProducts();
-
     if (response.statusCode == 200) {
       return productListFromJson(response.body);
     } else {
@@ -26,7 +23,6 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
   void initState() {
     super.initState();
     futureProduct = fetchProducts();
-    print(futureProduct);
   }
 
   @override
@@ -69,7 +65,7 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
                             horizontal: 20.0,
                           ),
                           decoration: BoxDecoration(
-                            color: donutList[index].color,
+                            color: hexToColor(snapshot.data[index].color),
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(20.0),
                               bottomLeft: Radius.circular(20.0),
@@ -98,7 +94,7 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
                             Align(
                               alignment: Alignment.center,
                               child: Image.asset(
-                                donutList[index].img,
+                                snapshot.data[index].img,
                                 fit: BoxFit.contain,
                                 width: 100,
                                 height: 100,
@@ -161,7 +157,12 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
             } else if (snapshot.hasError) {
               return Text("Error");
             }
-            return CircularProgressIndicator();
+            return Center(
+              child: CircularProgressIndicator(
+                backgroundColor: Colors.grey,
+                strokeWidth: 2.0,
+              ),
+            );
           },
         ),
       ),
@@ -178,4 +179,9 @@ Color darken(Color color, [double amount = .1]) {
   final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
 
   return hslDark.toColor();
+}
+
+// https://stackoverflow.com/a/61995168
+Color hexToColor(String code) {
+  return new Color(int.parse(code, radix: 16) + 0xFF000000);
 }

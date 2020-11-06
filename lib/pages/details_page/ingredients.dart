@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_donut_ui/models/donutgrid.model.dart';
 import 'package:flutter_donut_ui/constants/constants.dart' as CONSTANT;
+import 'package:flutter_donut_ui/models/product.model.dart';
 
 class IngredientsDetails extends StatelessWidget {
-  final IngredientStats stats;
+  final Ingredient stats;
   final int index;
   const IngredientsDetails({Key key, this.stats, this.index}) : super(key: key);
 
