@@ -10,6 +10,11 @@ class HeaderNavigation extends StatelessWidget {
       (nav) => nav.selctedNav[0],
     );
 
+    void updateNavList(item) {
+      var nav = context.read<NavProvider>();
+      nav.updateNavList(item);
+    }
+
     return Container(
       height: 110,
       child: ListView.separated(
@@ -18,7 +23,9 @@ class HeaderNavigation extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, item) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              updateNavList(item);
+            },
             child: Container(
               decoration: currNavSelected == item
                   ? BoxDecoration(
