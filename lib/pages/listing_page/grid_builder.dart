@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donut_ui/models/product.model.dart';
 import 'package:flutter_donut_ui/services/list.service.dart';
+import 'package:flutter_donut_ui/utils/color_management.dart';
 
 class ProductGridBuilder extends StatefulWidget {
   @override
@@ -65,7 +66,8 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
                             horizontal: 20.0,
                           ),
                           decoration: BoxDecoration(
-                            color: hexToColor(snapshot.data[index].color),
+                            color: ColorManager.hexToColor(
+                                snapshot.data[index].color),
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(20.0),
                               bottomLeft: Radius.circular(20.0),
@@ -74,7 +76,7 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
                           child: Text(
                             r"$" + snapshot.data[index].price.toString(),
                             style: TextStyle(
-                              color: darken(Colors.red, .4),
+                              color: ColorManager.darken(Colors.red, .4),
                               fontSize: 18.0,
                             ),
                           ),
@@ -168,20 +170,4 @@ class _ProductGridBuilderState extends State<ProductGridBuilder> {
       ),
     );
   }
-}
-
-//https://stackoverflow.com/questions/58360989/programmatically-lighten-or-darken-a-hex-color-in-dart
-
-Color darken(Color color, [double amount = .1]) {
-  assert(amount >= 0 && amount <= 1);
-
-  final hsl = HSLColor.fromColor(color);
-  final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
-
-  return hslDark.toColor();
-}
-
-// https://stackoverflow.com/a/61995168
-Color hexToColor(String code) {
-  return new Color(int.parse(code, radix: 16) + 0xFF000000);
 }
