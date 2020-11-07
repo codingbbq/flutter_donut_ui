@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_donut_ui/pages/details_page/item_details_page.dart';
 import 'package:flutter_donut_ui/pages/listing_page/listing_page.dart';
+import 'package:flutter_donut_ui/provider/navigation.provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(DonutUI());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => NavProvider(),
+      child: FoodAppUI(),
+    ),
+  );
 }
 
-class DonutUI extends StatelessWidget {
+class FoodAppUI extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,7 @@ class DonutUI extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (BuildContext context) => DonutListingPage(),
+        '/': (BuildContext context) => ProductListingPage(),
         '/item': (BuildContext context) => ItemDetailsPage()
       },
     );

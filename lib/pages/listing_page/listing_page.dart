@@ -3,7 +3,7 @@ import 'package:flutter_donut_ui/pages/listing_page/grid_builder.dart';
 import 'package:flutter_donut_ui/pages/listing_page/navigation.dart';
 import 'package:flutter_donut_ui/utils/custom_paint.dart';
 
-class DonutListingPage extends StatelessWidget {
+class ProductListingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
